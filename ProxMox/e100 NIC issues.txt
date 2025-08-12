@@ -1,0 +1,24 @@
+ip a
+ethtool -k enp2s0f0
+ethtool -k enp2s0f0 | grep offload
+
+# Manual
+ethtool -K enp2s0f0 gso off gro off tso off tx off rx off rxvlan off txvlan off
+
+# Forced
+nano /etc/network/interfaces
+
+        offload-gso off
+        offload-gro off
+        offload-tso off
+        offload-rx off
+        offload-tx off
+        offload-rxvlan off
+        offload-txvlan off
+        offload-sg off
+        offload-ufo off
+        offload-lro off
+
+
+
+

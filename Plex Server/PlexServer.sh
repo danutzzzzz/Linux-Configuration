@@ -4,13 +4,16 @@
 ##################
 ##################
 
+# https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new
+# https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding
+# https://github.com/keylase/nvidia-patch
+
 ##############
 ## GPU transcoding Tools (install on PVE host)
 
 # Configure Proxmox host # https://andrewferguson.net/2022/06/18/plex-proxmox-vm-with-nvidia-gpu-passthrough/
 lspci -nnv | grep VGA
 lspci -k | grep -EA3 'VGA|3D|Display'
-
 	
 lspci -s 01:00
 

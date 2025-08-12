@@ -11,6 +11,49 @@ echo '{ "data-root": "/mnt/ssd1/docker/docker-images" }' | tee /etc/docker/daemo
 # Restart Docker
 systemctl restart docker
 
+========
+Docker
+========
+{
+  "data-root": "/mnt/ssd1/docker/docker-images",
+  "dns": [
+    "10.0.9.110",
+    "10.0.9.100"
+  ],
+  "dns-opt": [
+    "dns-over-tls"
+  ],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "1024m",
+    "max-file": "3"
+  }
+}
+
+========
+PLEX
+========
+{
+  "data-root": "/mnt/ssd1/docker/docker-images",
+  "dns": [
+    "10.0.9.110",
+    "10.0.9.100"
+  ],
+  "dns-opt": [
+    "dns-over-tls"
+  ],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "1024m",
+    "max-file": "3"
+  },
+  "runtimes": {
+    "nvidia": {
+      "args": [],
+      "path": "nvidia-container-runtime"
+    }
+  }
+}
 
 
 
