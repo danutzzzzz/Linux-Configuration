@@ -25,7 +25,7 @@ Docker
   ],
   "log-driver": "json-file",
   "log-opts": {
-    "max-size": "1024m",
+    "max-size": "64m",
     "max-file": "3"
   }
 }
@@ -44,7 +44,7 @@ PLEX
   ],
   "log-driver": "json-file",
   "log-opts": {
-    "max-size": "1024m",
+    "max-size": "64m",
     "max-file": "3"
   },
   "runtimes": {
