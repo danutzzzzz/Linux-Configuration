@@ -33,7 +33,7 @@ deb-src http://deb.debian.org/debian/ bookworm-updates main contrib non-free non
 
 # Perform OS Upgrades
 # sudo [ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -7)" ] && sudo apt-get update && sudo apt-get upgrade -y  && sudo reboot
-[ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -0)" ] && apt-get update && apt-get upgrade -y  && reboot
+[ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -0)" ] && apt-get update && apt-get upgrade -y  && apt-get dist-upgrade -y  && reboot
 
 #set DNS - https://learnubuntu.com/change-dns-server/
 # Backup /etc/resolv.conf 
