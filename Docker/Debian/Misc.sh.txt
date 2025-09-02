@@ -1,0 +1,21 @@
+# remove docker images
+rm -rf /mnt/ssd1/docker/docke-images/
+
+# ensure nfs client tools are installed
+apt install nfs-common
+
+# /var/run/docker.sock: connect: permission denied
+/usr/sbin/usermod -aG docker administrator
+
+# add administrator to sudoers
+su -
+usermod -aG sudo administrator
+exit
+exit
+
+# List services
+systemctl list-unit-files --type=service
+
+
+# view docker journal
+journalctl -u docker.service --since "2 minutes ago"
