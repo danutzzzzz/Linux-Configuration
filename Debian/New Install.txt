@@ -1,0 +1,46 @@
+# edit network
+/etc/network/interfaces
+
+# install sudo
+apt install sudo -y
+
+# ensure nfs client tools are installed if required
+apt install nfs-common -y
+
+# ensure nfs client tools are installed
+apt install nethogs -y
+
+# add admin account to sudo
+sudo usermod -aG sudo administrator
+
+# edit fstab and re-add drives if needed
+sudo blkid
+sudo nano /etc/fstab
+sudo systemctl daemon-reload
+sudo mount -a
+
+# install docker
+https://docs.docker.com/engine/install/debian/
+
+# add admin account to docker
+sudo usermod -aG docker administrator
+
+# remove docker images
+rm -rf /mnt/ssd1/docker/docker-images/
+
+# stop docker
+# sudo systemctl stop docker.socket
+sudo systemctl stop docker.service
+
+# repoint docker images
+sudo nano /etc/docker/daemon.json
+
+# set compose environment pointer
+nano /etc/environment >> COMPOSE_FILE=/mnt/ssd1/docker/docker-compose/docker-compose.yml
+
+# start docker
+sudo systemctl start docker
+
+# copy back rc.local if needed
+sudo nano /etc/rc.local
+sudo chmod +x /etc/rc.local
