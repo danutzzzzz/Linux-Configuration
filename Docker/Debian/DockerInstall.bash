@@ -46,12 +46,45 @@ sudo touch daemon.json
 sudo nano daemon.json
 
 {
+  "data-root": "/mnt/ssd1/docker/docker-images",
+  "dns": [
+    "10.0.9.110",
+    "10.0.9.100"
+  ],
+  "dns-opt": [
+    "dns-over-tls"
+  ],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "64m",
+    "max-file": "3"
+  }
+}
+
+or
+
+{
     "data-root": "/mnt/ssd1/docker/docker-images",
     "dns": [
-        "45.90.28.93",
-        "45.90.30.93"
-    ]
+        "10.0.9.110",
+        "10.0.9.100"
+    ],
+    "dns-opt": [
+        "dns-over-tls"
+    ],
+    "log-driver": "json-file",
+    "log-opts": {
+        "max-file": "3",
+        "max-size": "64m"
+    },
+    "runtimes": {
+        "nvidia": {
+            "args": [],
+            "path": "nvidia-container-runtime"
+        }
+    }
 }
+
 
 
 # Restart Docker to pick up new location
