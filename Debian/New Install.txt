@@ -5,10 +5,19 @@
 apt install sudo -y
 
 # ensure nfs client tools are installed if required
-apt install nfs-common -y
+# apt install nfs-common -y
 
-# ensure nfs client tools are installed
+# Install btop
+apt install btop -y
+
+# Install fastfetch
+apt install fastfetch -y
+
+# install network bandwitch monitoring tools are installed
 apt install nethogs -y
+
+# install file management tools - https://midnight-commander.org/#installation
+apt install mc -y
 
 # add admin account to sudo
 sudo usermod -aG sudo administrator
