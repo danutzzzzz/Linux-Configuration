@@ -8,6 +8,9 @@ select /dev/sdb
 mklabel gpt
 mkpart primary ext4 0 -0
 
+# wipe existing data
+sudo wipefs -a /dev/sdb
+
 # Now Format
 sudo mkfs.ext4 /dev/sdb
 
