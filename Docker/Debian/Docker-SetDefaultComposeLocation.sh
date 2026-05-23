@@ -8,7 +8,7 @@ COMPOSE_FILE=/mnt/ssd1/docker/docker-compose/docker-compose.yml
 
 or
 
-echo "COMPOSE_FILE=/mnt/ssd1/docker/docker-compose/docker-compose.yml" >> /etc/environment
+echo "COMPOSE_FILE=/mnt/ssd1/docker/docker-compose/docker-compose.yml" | sudo tee -a /etc/environment
 
 
 
